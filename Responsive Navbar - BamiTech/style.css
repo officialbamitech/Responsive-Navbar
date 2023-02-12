@@ -1,0 +1,127 @@
+*{ 
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  text-decoration: none;
+  list-style: none;
+}
+
+nav {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  min-height: 70px;
+  font-family: 'Montserrat', sans-serif;
+  background-color: rgba(255, 148, 72, 0.97);
+  position: fixed;
+  width: 100%;
+}
+
+.kabul {
+  color: white;
+}
+
+.logo {
+  color: white;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  font-size: 1.8rem;
+  text-shadow: 0 0 10px black;
+}
+
+.nav-links {
+  display: flex;
+  justify-content: space-around;
+  width: 40%;
+}
+
+.nav-links a {
+  color: white;
+  letter-spacing: 1px;
+  font-weight: bold;
+  font-size: 18px;
+}
+
+.nav-links a:hover {
+  background-color: rgb(255, 98, 41);
+  padding: 7px 13px;
+  border-radius: 5px;
+  color: white;
+  transition: .3s ease;
+}
+
+.burger {
+  display: none;
+}
+
+.burger div {
+  width: 27px;
+  height: 3px;
+  background-color: white;
+  margin: 5px;
+  transition: all 0.3s ease;
+}
+
+.nav-active {
+  transform: translate(0%);
+}
+
+/* Animation for the Burger-Menu */
+@keyframes navLinkFade {
+  from {
+    opacity: 0;
+    transform: translate(50px);
+  }
+  to {
+    opacity: 1;
+    transform: translate(0px);
+  }
+}
+/* End of the Animation for Burger-Menu */
+
+/* Styling for the Toggle */
+.toggle .line1 {
+  transform: rotate(-45deg) translate(-5px, 6px);
+}
+
+.toggle .line2 {
+  opacity: 0;
+}
+
+.toggle .line3 {
+  transform: rotate(45deg) translate(-5px, -6px);
+}
+/* End of styling for Toggle */
+
+@media only screen and (max-width: 768px) {
+  body {
+    overflow-x: hidden;
+  }
+
+  .nav-links a {
+    font-size: 1.2rem;
+  }
+
+  .nav-links {
+    position: absolute;
+    right: 0px;
+    height: 100vh;
+    width: 50%;
+    top: 15px;
+    background-color: rgba(255, 148, 72, 0.97);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    transform: translate(100%);
+    transition: transform 0.7s ease-in;
+  }
+
+  .nav-links li{
+    opacity: 0;
+  }
+
+  .burger {
+    display: block;
+    cursor: pointer;
+  }
+}
